@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPA, Height, and Weight</title>
+  <style>
+
+    body{
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+      background-image: url(pexels-d-ng-nhan-324384-1529881.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .Form-Container {
+      background-color: #86898d;
+      border: 2px solid black;
+      width: 30%;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    }
+    h2{
+      background-color: #86898d;
+      border: 2px solid black;
+      width: 30%; 
+      margin: 20px auto; 
+      padding: 10px;
+    }
+    label, input {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: 16px;
+      text-align: left;
+    }     
+    p{
+      background-color: #86898d;
+      border: 2px solid black;
+      width: 30%; 
+      margin: 20px auto; 
+      padding: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <h2>Enter your details</h2>
+
+  <div class="Form-Container">
+    <label for="gpa">Enter your GPA:</label>
+    <input type="text" id="gpa" inputmode="decimal" placeholder="e.g., 3.75">
+
+    <label for="height">Enter your height:</label>
+    <input type="text" id="height" inputmode="decimal" placeholder="e.g., 5.6">
+
+    <label for="weight">Enter your weight:</label>
+    <input type="text" id="weight" inputmode="decimal" placeholder="e.g., 60.5">
+
+  <button onclick="displayValues()">Submit</button>
+  </div>
+
+  <h3>Output:</h3>
+  <p id="output"></p>
+
+  <script>
+    function displayValues() {
+      
+      const gpa = parseFloat(document.getElementById("gpa").value);
+      const height = parseFloat(document.getElementById("height").value);
+      const weight = parseFloat(document.getElementById("weight").value);
+
+     
+      const formattedGPA = gpa.toFixed(2);
+      const formattedHeight = height.toFixed(2);
+      const formattedWeight = weight.toFixed(2);
+
+      
+      document.getElementById("output").innerHTML = `
+        GPA: ${formattedGPA}<br>
+        Height: ${formattedHeight}<br>
+        Weight: ${formattedWeight}
+      `;
+    }
+  </script>
+</body>
+</html>
